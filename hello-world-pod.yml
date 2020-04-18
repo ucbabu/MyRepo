@@ -1,32 +1,15 @@
-{
-    "kind": "Job",
-    "apiVersion": "batch/v1",
-    "metadata": {
-        "name": "hello",
-        "creationTimestamp": null,
-        "labels": {
-            "run": "hello"
-        }
-    },
-    "spec": {
-        "template": {
-            "metadata": {
-                "creationTimestamp": null,
-                "labels": {
-                    "run": "hello"
-                }
-            },
-            "spec": {
-                "containers": [
-                    {
-                        "name": "hello",
-                        "image": "hello-world",
-                        "resources": {}
-                    }
-                ],
-                "restartPolicy": "OnFailure"
-            }
-        }
-    },
-    "status": {}
-}
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: hello
+  name: hello
+spec:
+  containers:
+  - image: hello-world
+    name: hello
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
