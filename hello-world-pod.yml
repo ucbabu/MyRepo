@@ -1,0 +1,32 @@
+{
+    "kind": "Job",
+    "apiVersion": "batch/v1",
+    "metadata": {
+        "name": "hello",
+        "creationTimestamp": null,
+        "labels": {
+            "run": "hello"
+        }
+    },
+    "spec": {
+        "template": {
+            "metadata": {
+                "creationTimestamp": null,
+                "labels": {
+                    "run": "hello"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "hello",
+                        "image": "hello-world",
+                        "resources": {}
+                    }
+                ],
+                "restartPolicy": "OnFailure"
+            }
+        }
+    },
+    "status": {}
+}
