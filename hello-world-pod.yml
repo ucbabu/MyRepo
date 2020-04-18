@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: hello
+    api: hello-world
   name: hello
 spec:
   containers:
